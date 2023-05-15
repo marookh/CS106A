@@ -1,0 +1,19 @@
+# this is necessary if you want to use random numbers
+import random
+
+def main():
+    for i in range(10):
+        NUMBER()
+        
+def NUMBER():
+    for i in range(10):
+        A = random.randint(1,100)
+        B = random.randint(1,100)
+        C = A + B
+    print(C)
+    
+    
+    
+  
+if __name__ == '__main__':
+    main()
