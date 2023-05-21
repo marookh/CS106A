@@ -1,0 +1,41 @@
+def main():
+    for i in range(10, 20):
+        if is_odd_3(i):
+            print(i, "odd")
+        else:
+            print(i, "even")
+        
+   
+
+def is_odd_1(value):
+    while value> 2:
+        value = value - 2
+    if value == 2:
+        return False
+    return True
+    
+def is_odd_2(value):
+    remainder = value % 2
+       
+    if remainder == 1:
+        return True
+    return False
+    
+def is_odd_3(value):
+    remainder = value % 2
+    
+    if remainder == 0: 
+        return False
+    else:
+        return True
+        
+    
+
+
+
+
+
+
+
+if __name__ == '__main__':
+    main()
