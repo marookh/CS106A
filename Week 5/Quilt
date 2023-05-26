@@ -1,0 +1,93 @@
+from graphics import Canvas
+
+# each patch is a square with this width and height:
+
+PATCH_SIZE = 100
+
+CANVAS_WIDTH = PATCH_SIZE * 4
+
+CANVAS_HEIGHT = PATCH_SIZE * 2
+
+def main():
+
+    canvas = Canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
+
+    # draw the first row of patches
+
+    draw_square_patch(canvas, 0, 0)
+
+    draw_circle_patch(canvas, PATCH_SIZE, 0)
+
+    draw_square_patch(canvas, PATCH_SIZE*2, 0)
+
+    draw_circle_patch(canvas, PATCH_SIZE*3, 0)
+
+    draw_circle_patch(canvas,0,PATCH_SIZE)
+
+    draw_square_patch(canvas, PATCH_SIZE, PATCH_SIZE)
+
+    draw_circle_patch(canvas, PATCH_SIZE*2,PATCH_SIZE)
+
+    draw_square_patch(canvas, PATCH_SIZE*3,PATCH_SIZE)
+
+
+def draw_circle_patch(canvas, start_x, start_y):
+
+    inset = 15
+
+    center = 25
+
+    cor = 35
+
+    
+
+    end_x = start_x + PATCH_SIZE
+
+    end_y = start_y + PATCH_SIZE
+
+    canvas.create_oval(start_x, start_y, end_x, end_y, "gold")
+
+    canvas.create_oval(start_x+inset,start_y+inset, end_x-inset, end_y-inset, "coral")
+
+    canvas.create_oval(start_x+center,start_y+center, end_x-center, end_y-center, "green")
+
+    canvas.create_oval(start_x+cor,start_y+cor, end_x-cor, end_y-cor, "orange")
+  
+
+def draw_square_patch(canvas, start_x, start_y):
+
+    # draws a purple frame at (start_x, start_y)
+
+    end_x = start_x + PATCH_SIZE
+
+    end_y = start_y + PATCH_SIZE
+
+    inset = 20
+
+    core = 30
+
+    centr = 40
+
+    # first draw a purple square over the entire patch
+
+    canvas.create_rectangle(start_x, start_y, end_x, end_y, 'green')
+
+    # then draw a smaller white square on top
+
+    canvas.create_rectangle(start_x+inset, start_y+inset, 
+
+        end_x-inset, end_y-inset, 'coral')
+
+    canvas.create_rectangle(start_x+core,start_y+core,end_x-core,end_y-core,'orange')
+
+    canvas.create_rectangle(start_x+centr,start_y+centr,end_x-centr,end_y-centr,'green')
+
+        
+
+    canvas.create_line(start_x,start_y,start_x + inset,start_y + inset)
+
+    
+
+if name == '__main__':
+
+    main()
