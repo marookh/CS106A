@@ -1,0 +1,39 @@
+from graphics import Canvas
+import time
+# Make CANSTANT variables
+CANVAS_WIDTH = 400
+CANVAS_HEIGHT = 450
+BALL_DIAMETER = 25
+INITIAL_VELOCITY = 5
+START_X = 0
+START_Y = 0
+DELAY = 0.001
+
+def main():
+    # Create ball
+    canvas = Canvas(CANVAS_WIDTH,CANVAS_HEIGHT)
+    START_X = 0
+    START_Y = 0
+    ball = canvas.create_oval(START_X,START_Y,
+                              START_X + BALL_DIAMETER,
+                              START_Y + BALL_DIAMETER,"blue") 
+    x_velocity = INITIAL_VELOCITY
+    y_velocity = INITIAL_VELOCITY
+   
+    # Use animation loop to animate the program                
+    while (True):
+        # Use if statement for x direction
+        if (START_X < 0 or START_X + BALL_DIAMETER >= CANVAS_WIDTH):
+            x_velocity = -x_velocity
+        elif (START_Y < 0 or START_Y + BALL_DIAMETER >= CANVAS_HEIGHT):
+            y_velocity = -y_velocity
+        
+        # Update the ball    
+        canvas.move(ball,x_velocity,y_velocity)
+        START_X += x_velocity
+        START_Y += y_velocity
+        time.sleep(DELAY)
+       
+   
+if __name__ == '__main__':
+    main()
