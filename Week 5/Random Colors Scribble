@@ -1,0 +1,26 @@
+from graphics import Canvas
+import time 
+import random
+    
+CANVAS_WIDTH = 400
+CANVAS_HEIGHT = 400
+DELAY = 0.01
+SIZE = 30
+def main():
+    canvas = Canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
+    while True:
+        mouse_x = canvas.get_mouse_x()
+        mouse_y = canvas.get_mouse_y()
+        time.sleep(DELAY)
+        print(str(mouse_x)+ "," + str(mouse_y))
+        if mouse_x >= 0 or (mouse_y >= (CANVAS_WIDTH and CANVAS_HEIGHT)):
+            oval = canvas.create_oval(mouse_x, mouse_y, mouse_x + SIZE,mouse_y + SIZE,random_color(canvas))
+       
+def random_color(canvas):
+    color = ['yellow','green','block','red','purple','orange','magenta'
+            ,'teal','maroon','pink','brown']
+    return random.choice(color)
+            
+   
+if __name__ == '__main__':
+    main()
