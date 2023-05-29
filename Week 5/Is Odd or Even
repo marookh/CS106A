@@ -1,0 +1,22 @@
+# print numbers from 1 up until MAX_NUMBER, inclusive
+MAX_NUMBER = 101
+
+def main():
+    for i in range(1, MAX_NUMBER):
+        if  odd_is(i):
+            print(i, "is odd")
+        else:
+            print(i, "is even")
+        
+    
+def odd_is(value):
+    remainder = value % 2
+    
+    if remainder == 0: 
+        return False
+    else:
+        return True
+        
+
+if __name__ == "__main__":
+    main()
