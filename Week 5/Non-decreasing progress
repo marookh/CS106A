@@ -1,0 +1,19 @@
+# Asks the user to enter a sequence of "non-decreasing" numbers one at a time.
+def main():
+    # Keep truck of sequence
+    sequence = 1
+    # Include intro massage
+    print("Enter a sequence of non-decreasing numbers.")
+    user = int(input("Enter num: "))
+    user_2 = float(input("Enter num: "))
+    # Repeat the code until the condition holds
+    while user_2 > user:
+        user_2 = int(input("Enter num: "))
+        sequence += 1
+    if user_2 < user:# Include exit massage with the length of sequence
+        print("Thanks for playing!")
+        print("The sequence length: ",str(sequence))
+     
+
+if __name__ == "__main__":
+    main()
