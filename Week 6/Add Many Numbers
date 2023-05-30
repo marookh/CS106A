@@ -1,0 +1,10 @@
+def add_many_numbers(value):
+    Total = 0
+    for value in numbers:
+        Total += value
+    return Total
+    
+    
+numbers = [1,2,3,4,5]
+sum_of_numbers = add_many_numbers(numbers)
+print(sum_of_numbers)
